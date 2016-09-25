@@ -24,7 +24,7 @@ module.exports = {
   target:'web', //means we are building up an app that browser can understnd,other value could be node
 
   output: {     //tells webpack where to create the web bundle:webpack doesn't actually create physical file. physical files are created only by npm run build command does. It only serves files from the memory. It also means that the files in production would be served from dist folder
-    path: __dirname,
+    path: __dirname + '/client/',
     filename: 'bundle.js',
     publicPath: 'http://0.0.0.0:8000/',
     //publicPath: 'http://localhost:8000/',
