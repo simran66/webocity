@@ -2,6 +2,7 @@ var webpack = require('webpack');
 var cssnext = require('postcss-cssnext');
 var postcssFocus = require('postcss-focus');
 var postcssReporter = require('postcss-reporter');
+var path = require('path')
 
 module.exports = {
   debug:true,
@@ -60,9 +61,23 @@ module.exports = {
       }, {
         test: /\.json$/,
         loader: 'json-loader',
-      },{
+      },
+      // ,{
+      //   test: /\.scss$/,
+      //   loaders: ["style", "css", "sass"]
+      // },
+      {
         test: /\.scss$/,
-        loaders: ["style", "css", "sass"]
+        loader: 'style!css!sass?outputStyle=expanded&' +
+        'includePaths[]=' +
+        (encodeURIComponent(
+          path.resolve(process.cwd(), './node_modules')
+        )) +
+        '&includePaths[]=' +
+        (encodeURIComponent(
+            path.resolve( process.cwd(),
+              './node_modules/grommet/node_modules'))
+        )
       },
     ],
   },
