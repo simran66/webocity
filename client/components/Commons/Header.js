@@ -4,6 +4,7 @@
 
 import React, {PropTypes}  from 'react';
 //import { Navbar, NavbarBrand, Nav, NavItem, NavLink } from 'reactstrap';
+import 'grommet/scss/vanilla/index';
 import {Header, Title, Menu, Anchor, Navbar} from 'grommet';
 
 
