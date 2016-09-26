@@ -33,7 +33,7 @@ module.exports = {
   },
 
   resolve: {
-    extensions: ['', '.js', '.jsx'],
+    extensions: ['', '.js', '.jsx', '.scss'],
     modules: [
       'client',
       'node_modules',
@@ -60,6 +60,9 @@ module.exports = {
       }, {
         test: /\.json$/,
         loader: 'json-loader',
+      },{
+        test: /\.scss$/,
+        loaders: ["style", "css", "sass"]
       },
     ],
   },

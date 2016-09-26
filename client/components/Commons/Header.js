@@ -3,19 +3,30 @@
  */
 
 import React, {PropTypes}  from 'react';
-import { Link, IndexLink} from 'react-router';
+import { Navbar, NavbarBrand, Nav, NavItem, NavLink } from 'reactstrap';
+//import {Header, Title, Menu, Anchor, Navbar} from 'grommet';
 
 
-const Header = (props) => {
+
+const TopHeader = (props) => {
   return(
-    <nav>
-      <IndexLink to="/home" activeClassName="active">Home</IndexLink>
-      { " | "}
-      <Link to="/inventory" >Inventory </Link>
-    </nav>
+    <div>
+      <Navbar color="faded" light>
+        <NavbarBrand href="/">reactstrap</NavbarBrand>
+        <Nav className="pull-xs-right" navbar>
+          <NavItem>
+            <NavLink href="/components/">Components</NavLink>
+          </NavItem>
+          <NavItem>
+            <NavLink href="https://github.com/reactstrap/reactstrap">Github</NavLink>
+          </NavItem>
+        </Nav>
+      </Navbar>
+    </div>
+
   );
 }
 
-export default Header;
+export default TopHeader;
 
 
